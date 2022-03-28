@@ -1,11 +1,11 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDg1MTU1NDN9.3c86Ki3zzl7Da_-TLAtuMHgtd8Eb4xe3gCZUOrAbFUs
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDg1MzE4MDN9.Ou5azRUabxdThBTDfrWDnbSuUE6qE0vRoi4NaUsB-7E
 ### Users create (signup)
 POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "name": "Jason",
-  "email": "jason@test.com",
+  "name": "bob",
+  "email": "bob@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -14,6 +14,16 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "jason@test.com",
+  "email": "bob@test.com",
   "password": "password"
+}
+### Dog create
+POST http://localhost:3000/dogs.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "name": "Jack",
+  "age": 1,
+  "breed": "Terrier"
 }
