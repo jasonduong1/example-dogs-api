@@ -2,7 +2,7 @@ class DogsController < ApplicationController
   before_action :authenticate_user, except: [:index, :show]
 
   def create
-    dog = Dog.new(
+    dog = current_user.dogs.new(
       name: params[:name],
       age: params[:age],
       breed: params[:breed],
